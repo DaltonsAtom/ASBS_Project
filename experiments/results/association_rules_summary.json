@@ -1,0 +1,138 @@
+{
+  "algorithm": "Association rule generation",
+  "source_algorithm": "Apriori frequent itemsets",
+  "input_file": "C:\\Users\\Priyank Jain\\Documents\\ASBD Project\\experiments\\results\\apriori_itemsets.csv",
+  "minimum_confidence": 0.3,
+  "minimum_lift": 1.0,
+  "frequent_itemsets_loaded": 353,
+  "rules_output": 140,
+  "top_rules_by_lift": [
+    {
+      "antecedent": "[\"22698\"]",
+      "consequent": "[\"22697\", \"22699\"]",
+      "union_itemset": "[\"22697\", \"22698\", \"22699\"]",
+      "union_length": 3,
+      "support_count": 542,
+      "support": 0.0261482053261289,
+      "confidence": 0.7075718015665794,
+      "lift": 19.09706810269801,
+      "antecedent_support": 0.0369548436896951,
+      "consequent_support": 0.0370513315322269
+    },
+    {
+      "antecedent": "[\"22697\", \"22699\"]",
+      "consequent": "[\"22698\"]",
+      "union_itemset": "[\"22697\", \"22698\", \"22699\"]",
+      "union_length": 3,
+      "support_count": 542,
+      "support": 0.0261482053261289,
+      "confidence": 0.7057291666666672,
+      "lift": 19.09706810269801,
+      "antecedent_support": 0.0370513315322269,
+      "consequent_support": 0.0369548436896951
+    },
+    {
+      "antecedent": "[\"22698\", \"22699\"]",
+      "consequent": "[\"22697\"]",
+      "union_itemset": "[\"22697\", \"22698\", \"22699\"]",
+      "union_length": 3,
+      "support_count": 542,
+      "support": 0.0261482053261289,
+      "confidence": 0.9048414023372308,
+      "lift": 18.4783769336415,
+      "antecedent_support": 0.0288981088382863,
+      "consequent_support": 0.0489675800849093
+    },
+    {
+      "antecedent": "[\"22697\"]",
+      "consequent": "[\"22698\", \"22699\"]",
+      "union_itemset": "[\"22697\", \"22698\", \"22699\"]",
+      "union_length": 3,
+      "support_count": 542,
+      "support": 0.0261482053261289,
+      "confidence": 0.533990147783251,
+      "lift": 18.478376933641496,
+      "antecedent_support": 0.0489675800849093,
+      "consequent_support": 0.0288981088382863
+    },
+    {
+      "antecedent": "[\"22698\"]",
+      "consequent": "[\"22697\"]",
+      "union_itemset": "[\"22697\", \"22698\"]",
+      "union_length": 2,
+      "support_count": 633,
+      "support": 0.0305384021613276,
+      "confidence": 0.8263707571801546,
+      "lift": 16.875874930867237,
+      "antecedent_support": 0.0369548436896951,
+      "consequent_support": 0.0489675800849093
+    },
+    {
+      "antecedent": "[\"22697\"]",
+      "consequent": "[\"22698\"]",
+      "union_itemset": "[\"22697\", \"22698\"]",
+      "union_length": 2,
+      "support_count": 633,
+      "support": 0.0305384021613276,
+      "confidence": 0.6236453201970429,
+      "lift": 16.875874930867237,
+      "antecedent_support": 0.0489675800849093,
+      "consequent_support": 0.0369548436896951
+    },
+    {
+      "antecedent": "[\"22697\", \"22698\"]",
+      "consequent": "[\"22699\"]",
+      "union_itemset": "[\"22697\", \"22698\", \"22699\"]",
+      "union_length": 3,
+      "support_count": 542,
+      "support": 0.0261482053261289,
+      "confidence": 0.8562401263823083,
+      "lift": 16.649292063463886,
+      "antecedent_support": 0.0305384021613276,
+      "consequent_support": 0.0514280200694712
+    },
+    {
+      "antecedent": "[\"22699\"]",
+      "consequent": "[\"22697\", \"22698\"]",
+      "union_itemset": "[\"22697\", \"22698\", \"22699\"]",
+      "union_length": 3,
+      "support_count": 542,
+      "support": 0.0261482053261289,
+      "confidence": 0.50844277673546,
+      "lift": 16.649292063463886,
+      "antecedent_support": 0.0514280200694712,
+      "consequent_support": 0.0305384021613276
+    },
+    {
+      "antecedent": "[\"23300\"]",
+      "consequent": "[\"23301\"]",
+      "union_itemset": "[\"23300\", \"23301\"]",
+      "union_length": 2,
+      "support_count": 546,
+      "support": 0.0263411810111925,
+      "confidence": 0.7203166226912912,
+      "lift": 16.35347530684018,
+      "antecedent_support": 0.0365688923195677,
+      "consequent_support": 0.0440467001157854
+    },
+    {
+      "antecedent": "[\"23301\"]",
+      "consequent": "[\"23300\"]",
+      "union_itemset": "[\"23300\", \"23301\"]",
+      "union_length": 2,
+      "support_count": 546,
+      "support": 0.0263411810111925,
+      "confidence": 0.5980284775465479,
+      "lift": 16.35347530684018,
+      "antecedent_support": 0.0440467001157854,
+      "consequent_support": 0.0365688923195677
+    }
+  ],
+  "completed_utc": "2026-10-19T15:27:31.031406+00:00",
+  "metric_definitions": {
+    "support": "Fraction of all transactions containing antecedent and consequent together.",
+    "confidence": "Support(antecedent union consequent) divided by support(antecedent).",
+    "lift": "Confidence divided by support(consequent); lift > 1 indicates positive association."
+  },
+  "caveat": "Association rules indicate co-occurrence, not causation. Rules are limited by the maximum itemset length mined by Apriori."
+}

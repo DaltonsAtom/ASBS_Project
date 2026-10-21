@@ -1,0 +1,26 @@
+{
+  "algorithm": "CHARM-style closed frequent itemset mining",
+  "implementation_note": "Vertical TID-set depth-first mining plus equal-support closure filtering; educational baseline, not an optimized canonical CHARM implementation.",
+  "input_file": "C:\\Users\\Priyank Jain\\Documents\\ASBD Project\\data\\transactions\\transactions.csv",
+  "transaction_count": 20728,
+  "unique_items_in_input": 3941,
+  "minimum_support_fraction": 0.02,
+  "minimum_support_percent": 2.0,
+  "minimum_support_count": 415,
+  "maximum_itemset_length": 3,
+  "frequent_itemsets_examined_before_closure_filter": 353,
+  "closed_itemsets_output": 353,
+  "closed_itemsets_by_length": {
+    "1": 276,
+    "2": 76,
+    "3": 1
+  },
+  "runtime_seconds": 1.1403,
+  "completed_utc": "2026-10-19T15:24:56.522797+00:00",
+  "notes": [
+    "Support is the number of transactions containing the itemset divided by all loaded non-empty transactions.",
+    "Closedness is assessed only among itemsets mined up to the configured maximum length.",
+    "For an exhaustive closed-itemset result, run with --max-len 0; this may be computationally expensive.",
+    "This is a single-machine implementation, not a distributed Spark implementation."
+  ]
+}

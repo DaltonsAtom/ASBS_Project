@@ -1,0 +1,72 @@
+{
+  "layer": "Layer 6 — Customer Spending Classification",
+  "input_file": "C:\\Users\\Priyank Jain\\Documents\\ASBD Project\\data\\processed\\customer_purchase_lines.csv",
+  "observation_window": {
+    "start": "2010-12-01 08:26:00",
+    "end": "2011-08-31 23:59:59"
+  },
+  "outcome_window": {
+    "start": "2011-09-01 00:00:00",
+    "end": "2011-12-09 23:59:59"
+  },
+  "customer_count_observation_window": 3317,
+  "future_spend_75th_percentile_threshold": 1246.54,
+  "target_definition": "HighSpender=1 if future-window spend is >= the 75th percentile of positive future spend among customers with positive future spend; otherwise 0, including customers with no future-window purchases.",
+  "features_used": [
+    "Recency",
+    "Frequency",
+    "Monetary",
+    "TotalQuantity",
+    "MeanUnitPrice",
+    "DistinctProducts"
+  ],
+  "target_distribution": {
+    "0": 2829,
+    "1": 488
+  },
+  "split": {
+    "method": "stratified random customer-level train/test split",
+    "test_size": 0.2,
+    "random_state": 42,
+    "train_rows": 2653,
+    "test_rows": 664
+  },
+  "models": [
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.8569277108433735,
+      "precision_high_spender": 0.5104895104895105,
+      "recall_high_spender": 0.7448979591836735,
+      "f1_high_spender": 0.6058091286307054,
+      "roc_auc": 0.8719982692723731
+    },
+    {
+      "model": "Decision Tree",
+      "accuracy": 0.8072289156626506,
+      "precision_high_spender": 0.4147727272727273,
+      "recall_high_spender": 0.7448979591836735,
+      "f1_high_spender": 0.5328467153284672,
+      "roc_auc": 0.8277475301074493
+    },
+    {
+      "model": "Random Forest",
+      "accuracy": 0.8870481927710844,
+      "precision_high_spender": 0.5934959349593496,
+      "recall_high_spender": 0.7448979591836735,
+      "f1_high_spender": 0.6606334841628959,
+      "roc_auc": 0.8739273094396769
+    }
+  ],
+  "outputs": [
+    "experiments/results/classification_model_comparison.csv",
+    "experiments/results/classification_test_predictions.csv",
+    "reports/figures/classification_model_comparison.png"
+  ],
+  "created_utc": "2026-10-19T15:34:41.514137+00:00",
+  "caveats": [
+    "All predictor features are computed only from the observation window; target spend is computed only from the later outcome window.",
+    "The positive class is defined using a future-spend threshold, so this is a retrospective evaluation on this dataset, not a live deployment result.",
+    "The customer-level random split evaluates generalization to held-out customers, not necessarily future calendar periods.",
+    "A later-period holdout of customers and dates would be a useful extension if more historical data were available."
+  ]
+}

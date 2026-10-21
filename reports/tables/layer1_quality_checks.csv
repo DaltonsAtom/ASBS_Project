@@ -1,0 +1,15 @@
+check,value,interpretation
+row_count,541909,Total source records.
+column_count,8,Total source columns.
+exact_duplicate_rows,5268,Rows identical across all columns; do not remove at acquisition stage.
+missing_customer_id_rows,135080,May still be usable for invoice-level pattern mining.
+missing_description_rows,1454,Review during preprocessing; StockCode may still be present.
+cancelled_invoice_lines,9288,Invoice numbers beginning with C; investigate in preprocessing.
+negative_quantity_lines,10624,May represent returns or adjustments; do not assume all are errors.
+zero_quantity_lines,0,"Zero-quantity records, if any."
+negative_unit_price_lines,2,Requires review in preprocessing.
+zero_unit_price_lines,2515,"May be samples, promotional items or other special records."
+unique_invoices,25900,"Distinct invoice identifiers, including any cancellation invoices."
+unique_stock_codes,4070,Distinct product codes.
+unique_customers_non_null,4372,Distinct known customer identifiers.
+unique_countries,38,Distinct country values.

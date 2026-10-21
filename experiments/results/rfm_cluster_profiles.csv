@@ -1,0 +1,4 @@
+Cluster,CustomerCount,MeanRecencyDays,MedianRecencyDays,MeanFrequency,MedianFrequency,MeanMonetary,MedianMonetary,CustomerSharePercent
+0,981,255.619,253.0,1.393,1.0,397.173,290.51,22.61
+1,2038,55.23,46.0,2.048,2.0,612.409,508.69,46.97
+2,1320,30.596,18.0,9.845,7.0,5492.04,2570.495,30.42

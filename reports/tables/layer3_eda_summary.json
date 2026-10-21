@@ -1,0 +1,49 @@
+{
+  "project": "Comparative Frequent Pattern Mining and Customer Behaviour Analytics",
+  "layer": "Layer 3 \u2014 Descriptive Statistics and Exploratory Data Analysis",
+  "created_utc": "2026-10-19T15:13:05.336434+00:00",
+  "input_rows": {
+    "purchase_lines_for_mining": 526054,
+    "customer_purchase_lines": 392732,
+    "unique_invoice_product_pairs": 520750,
+    "transactions": 20728
+  },
+  "key_statistics": {
+    "mining_date_min": "2010-12-01 08:26:00",
+    "mining_date_max": "2011-12-09 12:50:00",
+    "unique_products": 3941,
+    "mean_distinct_items_per_invoice": 25.123,
+    "median_distinct_items_per_invoice": 15.0,
+    "max_distinct_items_per_invoice": 1110,
+    "known_customer_revenue_sum": 8887208.89,
+    "top_country_by_known_customer_revenue": "United Kingdom",
+    "top_product_code_by_invoice_count": "85123A"
+  },
+  "outputs": {
+    "tables": [
+      "layer3_numeric_summary.csv",
+      "layer3_mining_data_profile.csv",
+      "layer3_basket_size_summary.csv",
+      "layer3_top_products_by_invoice_count.csv",
+      "layer3_monthly_purchase_lines.csv",
+      "layer3_monthly_known_customer_revenue.csv",
+      "layer3_country_summary.csv",
+      "layer3_iqr_outlier_diagnostics.csv"
+    ],
+    "figures": [
+      "layer3_top_products.png",
+      "layer3_monthly_purchase_lines.png",
+      "layer3_monthly_known_customer_revenue.png",
+      "layer3_basket_size_distribution.png",
+      "layer3_quantity_boxplot.png",
+      "layer3_unit_price_boxplot.png",
+      "layer3_line_value_boxplot.png"
+    ]
+  },
+  "caveats": [
+    "Revenue is calculated only from customer_purchase_lines.csv, so it excludes rows without a known CustomerID and rows with missing or negative UnitPrice.",
+    "The IQR method flags potential outliers; it does not prove that a record is erroneous.",
+    "Monthly counts are descriptive and do not by themselves establish seasonality or causation.",
+    "Product frequency counts distinct invoices containing each StockCode."
+  ]
+}

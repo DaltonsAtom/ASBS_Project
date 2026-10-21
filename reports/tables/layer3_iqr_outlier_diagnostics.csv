@@ -1,0 +1,4 @@
+variable,q1,q3,iqr,lower_iqr_fence,upper_iqr_fence,below_lower_fence_count,above_upper_fence_count,interpretation
+Quantity,2.0,12.0,10.0,-13.0,27.0,0,25625,Flag for investigation; not automatically an error or removed record.
+UnitPrice,1.25,3.75,2.5,-2.5,7.5,0,34112,Flag for investigation; not automatically an error or removed record.
+LineValue,4.949999999999999,19.8,14.850000000000001,-17.325000000000003,42.075,0,31231,Flag for investigation; not automatically an error or removed record.

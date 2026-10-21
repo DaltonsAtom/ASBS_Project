@@ -1,0 +1,7 @@
+algorithm,minimum_support,minimum_support_count,maximum_itemset_length,output_itemsets,runtime_seconds,peak_traced_memory_mb,output_type
+Apriori,0.02,415,3,353,4.016,7.997,All frequent itemsets
+FP-Growth,0.02,415,3,353,1.4953,69.835,All frequent itemsets
+CHARM-style,0.02,415,3,353,0.7216,2.525,Closed frequent itemsets
+Apriori,0.05,1037,3,32,0.1113,0.706,All frequent itemsets
+FP-Growth,0.05,1037,3,32,0.4139,32.558,All frequent itemsets
+CHARM-style,0.05,1037,3,32,0.0183,0.073,Closed frequent itemsets

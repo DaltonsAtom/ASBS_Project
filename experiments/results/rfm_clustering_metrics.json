@@ -1,0 +1,94 @@
+{
+  "layer": "Layer 5 — Customer Segmentation with RFM and K-Means",
+  "input_file": "C:\\Users\\Priyank Jain\\Documents\\ASBD Project\\data\\processed\\customer_purchase_lines.csv",
+  "snapshot_date": "2011-12-10",
+  "customer_count": 4339,
+  "rfm_definitions": {
+    "Recency": "Days between the customer's last observed purchase and snapshot date.",
+    "Frequency": "Number of distinct invoices per customer in the available observation period.",
+    "Monetary": "Sum of LineValue per customer in the available observation period."
+  },
+  "preprocessing_for_clustering": [
+    "Frequency and Monetary were transformed with log1p to reduce right skew.",
+    "RFM features were standardized before K-Means.",
+    "Candidate k values from 2 to 6 were compared using silhouette score.",
+    "K-Means used random_state=42 and n_init=10 for reproducibility."
+  ],
+  "candidate_k_scores": [
+    {
+      "k": 2,
+      "silhouette_score": 0.4060030106074017,
+      "inertia": 6885.123282969301
+    },
+    {
+      "k": 3,
+      "silhouette_score": 0.4154995149359795,
+      "inertia": 4312.765809076896
+    },
+    {
+      "k": 4,
+      "silhouette_score": 0.37966252107527976,
+      "inertia": 3255.884997215434
+    },
+    {
+      "k": 5,
+      "silhouette_score": 0.34348375467952574,
+      "inertia": 2773.31294856326
+    },
+    {
+      "k": 6,
+      "silhouette_score": 0.3303970644703865,
+      "inertia": 2409.6061632849355
+    }
+  ],
+  "selected_k": 3,
+  "selected_silhouette_score": 0.4154995149359795,
+  "cluster_profiles": [
+    {
+      "Cluster": 0,
+      "CustomerCount": 981,
+      "MeanRecencyDays": 255.619,
+      "MedianRecencyDays": 253.0,
+      "MeanFrequency": 1.393,
+      "MedianFrequency": 1.0,
+      "MeanMonetary": 397.173,
+      "MedianMonetary": 290.51,
+      "CustomerSharePercent": 22.61
+    },
+    {
+      "Cluster": 1,
+      "CustomerCount": 2038,
+      "MeanRecencyDays": 55.23,
+      "MedianRecencyDays": 46.0,
+      "MeanFrequency": 2.048,
+      "MedianFrequency": 2.0,
+      "MeanMonetary": 612.409,
+      "MedianMonetary": 508.69,
+      "CustomerSharePercent": 46.97
+    },
+    {
+      "Cluster": 2,
+      "CustomerCount": 1320,
+      "MeanRecencyDays": 30.596,
+      "MedianRecencyDays": 18.0,
+      "MeanFrequency": 9.845,
+      "MedianFrequency": 7.0,
+      "MeanMonetary": 5492.04,
+      "MedianMonetary": 2570.495,
+      "CustomerSharePercent": 30.42
+    }
+  ],
+  "outputs": [
+    "experiments/results/customer_rfm_segments.csv",
+    "experiments/results/rfm_cluster_profiles.csv",
+    "reports/figures/rfm_clusters.png",
+    "reports/figures/rfm_cluster_sizes.png"
+  ],
+  "created_utc": "2026-10-19T15:31:37.026770+00:00",
+  "caveats": [
+    "Cluster IDs are arbitrary labels, not ordered customer-value rankings.",
+    "RFM values summarize the observed dataset period and are not a future prediction.",
+    "Silhouette score is a heuristic for separation and should be considered alongside interpretability.",
+    "This is single-machine clustering; Spark integration is reserved for Version 2."
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "layer": "Layer 7 — Comparative Frequent-Pattern Mining Experiments",
+  "input_file": "C:\\Users\\Priyank Jain\\Documents\\ASBD Project\\data\\transactions\\transactions.csv",
+  "transaction_count": 20728,
+  "unique_product_count": 3941,
+  "support_thresholds": [
+    0.02,
+    0.05
+  ],
+  "maximum_itemset_length": 3,
+  "benchmark_rows": [
+    {
+      "algorithm": "Apriori",
+      "minimum_support": 0.02,
+      "minimum_support_count": 415,
+      "maximum_itemset_length": 3,
+      "output_itemsets": 353,
+      "runtime_seconds": 4.016,
+      "peak_traced_memory_mb": 7.997,
+      "output_type": "All frequent itemsets"
+    },
+    {
+      "algorithm": "FP-Growth",
+      "minimum_support": 0.02,
+      "minimum_support_count": 415,
+      "maximum_itemset_length": 3,
+      "output_itemsets": 353,
+      "runtime_seconds": 1.4953,
+      "peak_traced_memory_mb": 69.835,
+      "output_type": "All frequent itemsets"
+    },
+    {
+      "algorithm": "CHARM-style",
+      "minimum_support": 0.02,
+      "minimum_support_count": 415,
+      "maximum_itemset_length": 3,
+      "output_itemsets": 353,
+      "runtime_seconds": 0.7216,
+      "peak_traced_memory_mb": 2.525,
+      "output_type": "Closed frequent itemsets"
+    },
+    {
+      "algorithm": "Apriori",
+      "minimum_support": 0.05,
+      "minimum_support_count": 1037,
+      "maximum_itemset_length": 3,
+      "output_itemsets": 32,
+      "runtime_seconds": 0.1113,
+      "peak_traced_memory_mb": 0.706,
+      "output_type": "All frequent itemsets"
+    },
+    {
+      "algorithm": "FP-Growth",
+      "minimum_support": 0.05,
+      "minimum_support_count": 1037,
+      "maximum_itemset_length": 3,
+      "output_itemsets": 32,
+      "runtime_seconds": 0.4139,
+      "peak_traced_memory_mb": 32.558,
+      "output_type": "All frequent itemsets"
+    },
+    {
+      "algorithm": "CHARM-style",
+      "minimum_support": 0.05,
+      "minimum_support_count": 1037,
+      "maximum_itemset_length": 3,
+      "output_itemsets": 32,
+      "runtime_seconds": 0.0183,
+      "peak_traced_memory_mb": 0.073,
+      "output_type": "Closed frequent itemsets"
+    }
+  ],
+  "correctness_checks": [
+    {
+      "minimum_support": 0.02,
+      "apriori_fp_growth_identical_itemsets_and_counts": true,
+      "apriori_itemset_count": 353,
+      "fp_growth_itemset_count": 353,
+      "charm_closed_itemsets": 353,
+      "charm_frequent_itemsets_examined": 353
+    },
+    {
+      "minimum_support": 0.05,
+      "apriori_fp_growth_identical_itemsets_and_counts": true,
+      "apriori_itemset_count": 32,
+      "fp_growth_itemset_count": 32,
+      "charm_closed_itemsets": 32,
+      "charm_frequent_itemsets_examined": 32
+    }
+  ],
+  "all_apriori_fp_growth_checks_passed": true,
+  "measurement_notes": [
+    "All algorithms use the same transaction input, support thresholds, and maximum itemset length.",
+    "Peak memory is measured with Python tracemalloc and represents traced Python allocations, not total process resident memory. Runtime is measured without tracing overhead; peak traced memory is measured in a separate repeat run and represents Python allocations, not total process resident memory.",
+    "Runtime depends on the machine, Python version, background load, and implementation details.",
+    "CHARM-style output contains closed frequent itemsets, whereas Apriori and FP-Growth output all frequent itemsets; their output counts are not directly equivalent.",
+    "The CHARM implementation is a transparent vertical-TID-set educational baseline, not an optimized canonical CHARM implementation.",
+    "Results are single-machine baselines; distributed Spark/Hadoop experiments belong to Version 2."
+  ],
+  "created_utc": "2026-10-19T15:42:15.717215+00:00",
+  "outputs": [
+    "experiments/results/frequent_mining_benchmark.csv",
+    "reports/figures/frequent_mining_runtime.png",
+    "reports/figures/frequent_mining_itemset_counts.png"
+  ]
+}

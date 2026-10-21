@@ -1,0 +1,8 @@
+column,missing_count,missing_percent,unique_non_null,dtype
+InvoiceNo,0,0.0,20728,string
+StockCode,0,0.0,3941,string
+Description,592,0.1125,4065,str
+Quantity,0,0.0,393,int64
+InvoiceDate,0,0.0,19052,datetime64[us]
+CustomerID,133322,25.3438,4339,string
+Country,0,0.0,38,string

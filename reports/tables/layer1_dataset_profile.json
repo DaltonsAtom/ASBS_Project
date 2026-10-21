@@ -1,0 +1,45 @@
+{
+  "project": "Comparative Frequent Pattern Mining and Customer Behaviour Analytics",
+  "layer": "Layer 1 — Data Acquisition",
+  "source_name": "UCI Online Retail",
+  "source_url": "https://uci-ics-mlr-prod.aws.uci.edu/dataset/352/online%2Bretail",
+  "input_file": "Online Retail.xlsx",
+  "input_path_at_execution": "C:\\Users\\Priyank Jain\\Documents\\ASBD Project\\data\\raw\\Online Retail.xlsx",
+  "file_size_bytes": 23715344,
+  "file_size_mib": 22.617,
+  "sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "acquisition_record_created_utc": "2026-10-19T14:52:53.668463+00:00",
+  "worksheet_names": [
+    "Online Retail"
+  ],
+  "worksheet_profiled": "Online Retail",
+  "row_count": 541909,
+  "column_count": 8,
+  "columns": [
+    "InvoiceNo",
+    "StockCode",
+    "Description",
+    "Quantity",
+    "InvoiceDate",
+    "UnitPrice",
+    "CustomerID",
+    "Country"
+  ],
+  "missing_expected_columns": [],
+  "unexpected_columns": [],
+  "exact_duplicate_rows": 5268,
+  "date_min": "2010-12-01T08:26:00",
+  "date_max": "2011-12-09T12:50:00",
+  "unique_invoices": 25900,
+  "unique_stock_codes": 4070,
+  "unique_customers_non_null": 4372,
+  "unique_countries": 38,
+  "schema_validation": "passed",
+  "raw_data_modified": false,
+  "notes": [
+    "This is a profiling and validation stage only; no rows were removed or transformed.",
+    "Missing customer identifiers do not automatically invalidate invoice-level transactions.",
+    "Cancellation and negative-quantity records require an explicit preprocessing policy in Layer 2.",
+    "The SHA-256 checksum identifies the exact workbook used for this run."
+  ]
+}

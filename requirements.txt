@@ -1,0 +1,7 @@
+# Core dependencies for Customer Behaviour Analytics
+# Install with: pip install -r requirements.txt
+
+pandas
+numpy
+matplotlib
+scikit-learn
